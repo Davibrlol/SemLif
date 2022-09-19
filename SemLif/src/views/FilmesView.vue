@@ -1,258 +1,40 @@
+<script>
+import CardComp from "../components/CardComp.vue";
+
+export default {
+  components: { CardComp },
+  data() {
+    return {
+      movies: [
+        {
+          id: 1,
+        },
+        {
+          id: 2,
+        },
+        {
+          id: 3,
+        },
+        {
+          id: 4,
+        },
+        {
+          id: 5,
+        },
+      ],
+    };
+  },
+};
+</script>
 <template>
-  <div class="justify-center">
-    <h1 class="text-center pb-5 text-3xl text-white">Ação</h1>
-    <div class="flex justify-center gap-12 container">
-    
-    <div id="card1">    
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
+  <div class="">
+    <h1 class="flex justify-center text-white">Ação</h1>
+    <div class="flex justify-center text-white">
+      <CardComp v-for="movie of movies" :key="movie.id" :filme="movie" />
+    </div>
+    <h1 class="flex justify-center text-white">Aventura</h1>
+    <div class="flex justify-center text-white">
+      <CardComp v-for="movie of movies" :key="movie.id" :filme="movie" />
     </div>
   </div>
-  <div>
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-  <div>
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-    <div>
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-    <div>
-    <div class="absolute z-10 text-white">aasdasaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-  </div>
-  <h1 class="text-center  pt-8 pb-5 text-3xl text-white">Aventura</h1>
-  <div class="flex justify-center gap-12 container mt-5">
-    <div id="card1">    
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-  <div>
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-  <div>
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-    <div>
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-    <div>
-    <div class="absolute z-10 text-white">aasdasaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-  </div>
-  <h1 class="text-center pt-8  pb-5 text-3xl text-white">Romance</h1>
-  <div class="flex justify-center gap-12 container mt-5">
-    <div id="card1">    
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-  <div>
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-  <div>
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-    <div>
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-    <div>
-    <div class="absolute z-10 text-white">aasdasaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-  </div>
-  <h1 class="text-center pt-8 pb-5 text-3xl text-white"> Comédia</h1>
-  <div class="flex justify-center gap-12 container mt-5">
-    <div id="card1">    
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-  <div>
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-  <div>
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-    <div>
-    <div class="absolute z-10 text-white">aaaaaaaaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-    <div>
-    <div class="absolute z-10 text-white">aasdasaaaa</div>
-    <div class="rounded-lg shadow-lg  w-64">
-      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img
-          class="rounded-t-lg"
-          src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-  </div>
- 
-</div>
 </template>
