@@ -1,1 +1,8 @@
-<template><h1>HELO</h1></template>
+<script setup>
+    import CardComp from '../components/CardComp.vue';
+
+</script>
+
+<template>
+    <CardComp />
+</template>
