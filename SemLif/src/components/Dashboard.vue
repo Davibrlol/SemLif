@@ -20,7 +20,7 @@ import { RouterLink, RouterView } from "vue-router";
               class="flex items-center justify-between mb-4"
               style="cursor: auto"
             >
-              Twitter Followers
+              Filmes Cadastrados 
               <svg
                 class="h-4 w-4 ml-1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ import { RouterLink, RouterView } from "vue-router";
             class="mt-2 text-3xl font-bold spacing-sm leading-none"
             style="cursor: auto"
           >
-            5,412
+            5,000
           </p>
         </div>
         <div
@@ -59,8 +59,7 @@ import { RouterLink, RouterView } from "vue-router";
               class="flex items-center justify-between mb-4"
               style="cursor: auto"
             >
-              Email Subscribers
-              <svg
+              Contas Cadastradas               <svg
                 class="h-4 w-4 ml-1"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -99,7 +98,7 @@ import { RouterLink, RouterView } from "vue-router";
               class="flex items-center justify-between mb-4"
               style="cursor: auto"
             >
-              Blog Articles
+              Visualizações diárias 
               <svg
                 class="h-4 w-4 ml-1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +119,7 @@ import { RouterLink, RouterView } from "vue-router";
             class="mt-2 text-3xl font-bold spacing-sm leading-none"
             style="cursor: auto"
           >
-            56
+            2570
           </p>
         </div>
         <div
@@ -134,7 +133,7 @@ import { RouterLink, RouterView } from "vue-router";
             href="https://stackdiary.com/"
           >
             <div class="flex items-center justify-between mb-4">
-              GitHub Projects
+              Países disponíveis 
               <svg
                 class="h-4 w-4 ml-1"
                 xmlns="http://www.w3.org/2000/svg"

@@ -4,6 +4,12 @@ export default {
     filme: {
       type: Object,
     },
+    serie: {
+      type: Object,
+    },
+    documentario: {
+      type: Object,
+    },
   },
   methods: {
     mostrarFilme() {

@@ -21,6 +21,9 @@ export default {
         {
           id: 5,
         },
+        {
+          id: 6,
+        }
       ],
     };
   },
@@ -28,11 +31,19 @@ export default {
 </script>
 <template>
   <div class="">
-    <h1 class="flex justify-center text-white">Ação</h1>
+    <h1 class="flex justify-center text-white text-4xl pb-7 ">Ação</h1>
     <div class="flex justify-center text-white">
       <CardComp v-for="movie of movies" :key="movie.id" :filme="movie" />
     </div>
-    <h1 class="flex justify-center text-white">Aventura</h1>
+    <h1 class="flex justify-center text-white text-4xl p-10">Aventura</h1>
+    <div class="flex justify-center text-white">
+      <CardComp v-for="movie of movies" :key="movie.id" :filme="movie" />
+    </div>
+    <h1 class="flex justify-center text-white text-4xl p-10">Romance</h1>
+    <div class="flex justify-center text-white">
+      <CardComp v-for="movie of movies" :key="movie.id" :filme="movie" />
+    </div>
+    <h1 class="flex justify-center text-white text-4xl p-10">Terror </h1>
     <div class="flex justify-center text-white">
       <CardComp v-for="movie of movies" :key="movie.id" :filme="movie" />
     </div>
