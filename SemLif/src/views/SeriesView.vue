@@ -1,52 +1,73 @@
 <script>
-    import CardComp from "../components/CardComp.vue";
-    
-    export default {
-      components: { CardComp },
-      data() {
-        return {
-          series: [
-            {
-              id: 1,
-            },
-            {
-              id: 2,
-            },
-            {
-              id: 3,
-            },
-            {
-              id: 4,
-            },
-            {
-              id: 5,
-            },
-            {
-              id: 6,
-            }
-          ],
-        };
-      },
+import CardComp from "../components/CardComp.vue";
+import axios from 'axios';
+
+export default {
+  components: { CardComp },
+  data() {
+    return {
+      generos: [],
+      SeriesPorGenero: [],
+      series: [
+        {
+          id: 1,
+        },
+        {
+          id: 2,
+        },
+        {
+          id: 3,
+        },
+        {
+          id: 4,
+        },
+        {
+          id: 5,
+        },
+        {
+          id: 6,
+        }
+      ],
     };
-    </script>
-    <template>
-      <div class="">
-        <h1 class="flex justify-center text-white text-4xl pb-7 ">Ação</h1>
-        <div class="flex justify-center text-white">
-          <CardComp v-for="serie of series" :key="serie.id" :serie="serie" />
-        </div>
-        <h1 class="flex justify-center text-white text-4xl p-10">Aventura</h1>
-        <div class="flex justify-center text-white">
-          <CardComp v-for="serie of series" :key="serie.id" :serie="serie" />
-        </div>
-        <h1 class="flex justify-center text-white text-4xl p-10">Romance</h1>
-        <div class="flex justify-center text-white">
-          <CardComp v-for="serie of series" :key="serie.id" :serie="serie" />
-        </div>
-        <h1 class="flex justify-center text-white text-4xl p-10">Terror </h1>
-        <div class="flex justify-center text-white">
-          <CardComp v-for="serie of series" :key="serie.id" :serie="serie" />
-        </div>
+  },
+  async created() {
+    const { data } = await axios.get(
+      "https://api.themoviedb.org/3/genre/tv/list?api_key=cdd74c9f441352e6a6aee5e2cc6532e6&language=pt-BR"
+    );
+    for (const genero of data.genres) {
+      const { data } = await axios.get(
+        `https://api.themoviedb.org/3/discover/tv?api_key=cdd74c9f441352e6a6aee5e2cc6532e6&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genero.id}&with_watch_monetization_types=flatrate`
+      );
+      this.SeriesPorGenero.push({
+        id: genero.id,
+        name: genero.name,
+        series: data.results,
+      });
+    }
+    console.log(this.SeriesPorGenero);
+    this.generos = data.genres;
+  },
+  methods: {
+    async getMoviesByGenre(genre) {
+      const { data } = await axios.get(
+        `https://api.themoviedb.org/3/discover/tv?api_key=cdd74c9f441352e6a6aee5e2cc6532e6&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genre}&with_watch_monetization_types=flatrate`
+      );
+      return data.results;
+    },
+  },
+};
+
+</script>
+<template>
+  <div class="">
+    <div v-for="genero of SeriesPorGenero" :key="genero.id">
+      <h1 class="flex justify-center text-white text-4xl pb-7">
+        {{ genero.name }}
+      </h1>
+      <div class="flex justify-center text-white">
+        <CardComp v-for="serie of genero.series.slice(0, 5)" :key="serie.id" :content="serie" />
       </div>
-    </template>
+    </div>
+  </div>
+</template>
     

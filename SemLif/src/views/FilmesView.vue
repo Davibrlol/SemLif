@@ -67,9 +67,9 @@ export default {
         <CardComp
           v-for="movie of filmesPorGenero
             .find((f) => f.id === genero.id)
-            .movies.slice(0, 6)"
+            .movies.slice(0, 5)"
           :key="movie.id"
-          :filme="movie"
+          :content="movie"
         />
       </div>
     </div>
