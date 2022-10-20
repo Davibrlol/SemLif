@@ -9,6 +9,7 @@ export default {
     return {
       generos: [],
       filmesPorGenero: [],
+      currentMovie: {},
       movies: [
         {
           id: 1,
@@ -55,6 +56,9 @@ export default {
       );
       return data.results;
     },
+    changeMovie(movie) {
+      Object.assign(this.currentMovie, movie)
+    }
   },
 };
 </script>
@@ -71,11 +75,12 @@ export default {
             .movies.slice(0, 5)"
           :key="movie.id"
           :content="movie"
+          @click="changeMovie(movie)"
           data-bs-toggle="modal" 
-          :data-bs-target="'#' + movie.title"
+          data-bs-target="#modalFilme"
         >        
-        <Modal :content="movie" />
-       </CardComp>
+      </CardComp>
+      <Modal :content="currentMovie" />
       </div>
     </div>
   </div>
