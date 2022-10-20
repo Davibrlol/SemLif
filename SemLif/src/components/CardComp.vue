@@ -24,5 +24,6 @@ export default {
         />
       </a>
     </div>
+    <slot></slot>
   </div>
 </template>

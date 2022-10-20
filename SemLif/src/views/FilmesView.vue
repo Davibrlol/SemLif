@@ -1,9 +1,10 @@
 <script>
 import axios from "axios ";
 import CardComp from "../components/CardComp.vue";
+import Modal from "../components/Modal.vue";
 
 export default {
-  components: { CardComp },
+  components: { CardComp, Modal },
   data() {
     return {
       generos: [],
@@ -59,7 +60,7 @@ export default {
 </script>
 <template>
   <div class="">
-    <div v-for="genero of generos" :key="genero.id">
+    <div v-for="genero of generos "  :key="genero.id">
       <h1 class="flex justify-center text-white text-4xl pb-7">
         {{ genero.name }}
       </h1>
@@ -70,7 +71,11 @@ export default {
             .movies.slice(0, 5)"
           :key="movie.id"
           :content="movie"
-        />
+          data-bs-toggle="modal" 
+          :data-bs-target="'#' + movie.title"
+        >        
+        <Modal :content="movie" />
+       </CardComp>
       </div>
     </div>
   </div>

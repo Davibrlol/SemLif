@@ -5,5 +5,6 @@
 </script>
 
 <template>
-    <DashboardVue />
+
+  <DashboardVue />
 </template>
