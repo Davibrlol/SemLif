@@ -57,14 +57,14 @@ export default {
       return data.results;
     },
     changeMovie(movie) {
-      Object.assign(this.currentMovie, movie)
-    }
+      Object.assign(this.currentMovie, movie);
+    },
   },
 };
 </script>
 <template>
   <div class="">
-    <div v-for="genero of generos "  :key="genero.id">
+    <div v-for="genero of generos" :key="genero.id">
       <h1 class="flex justify-center text-white text-4xl pb-7">
         {{ genero.name }}
       </h1>
@@ -76,11 +76,11 @@ export default {
           :key="movie.id"
           :content="movie"
           @click="changeMovie(movie)"
-          data-bs-toggle="modal" 
-          data-bs-target="#modalFilme"
-        >        
-      </CardComp>
-      <Modal :content="currentMovie" />
+          data-bs-toggle="modal"
+          data-bs-target="#modalcontent"
+        >
+        </CardComp>
+        <Modal :content="currentMovie" />
       </div>
     </div>
   </div>

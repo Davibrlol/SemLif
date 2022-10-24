@@ -1,13 +1,15 @@
 <script>
 import CardComp from "../components/CardComp.vue";
-import axios from 'axios';
+import Modal from "../components/Modal.vue";
+import axios from "axios";
 
 export default {
-  components: { CardComp },
+  components: { CardComp, Modal },
   data() {
     return {
       generos: [],
       SeriesPorGenero: [],
+      currentSerie: {},
       series: [
         {
           id: 1,
@@ -26,7 +28,7 @@ export default {
         },
         {
           id: 6,
-        }
+        },
       ],
     };
   },
@@ -54,9 +56,11 @@ export default {
       );
       return data.results;
     },
+    changeSerie(series) {
+      Object.assign(this.currentSerie, series)
+    }
   },
 };
-
 </script>
 <template>
   <div class="">
@@ -65,9 +69,16 @@ export default {
         {{ genero.name }}
       </h1>
       <div class="flex justify-center text-white">
-        <CardComp v-for="serie of genero.series.slice(0, 5)" :key="serie.id" :content="serie" />
+        <CardComp
+          v-for="serie of genero.series.slice(0, 5)"
+          :key="serie.id"
+          :content="serie"
+          @click="changeSerie(serie)"
+          data-bs-toggle="modal"
+          data-bs-target="#modalcontent"
+        />
+        <Modal :content="currentSerie" />
       </div>
     </div>
   </div>
 </template>
-    
